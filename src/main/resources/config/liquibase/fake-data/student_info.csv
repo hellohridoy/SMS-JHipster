@@ -1,0 +1,11 @@
+id;first_name;last_name;email;is_student;status
+1;Amir;Cartwright;Dawn_Kshlerin-Jacobson@yahoo.com;true;ACTIVE
+2;Mathew;Pollich;Blaze_Rau29@hotmail.com;true;PENDING
+3;Malika;Yost;Kaya_Sipes4@yahoo.com;true;INACTIVE
+4;Demetrius;Howe;Bernardo48@yahoo.com;false;ACTIVE
+5;Lizeth;O'Keefe;Ramona79@gmail.com;false;INACTIVE
+6;Rebeka;Doyle;Howard_Kuhn31@gmail.com;true;INACTIVE
+7;Rogers;O'Conner;Marcelino90@hotmail.com;true;INACTIVE
+8;Veronica;Trantow;Rodrigo.Goyette78@hotmail.com;false;INACTIVE
+9;Walker;Rodriguez;Jorge96@gmail.com;false;ACTIVE
+10;Chase;Gleason;Fabian14@yahoo.com;false;ACTIVE

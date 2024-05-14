@@ -1,0 +1,98 @@
+<div>
+  <h2 id="page-heading" data-cy="StudentInfoHeading">
+    <span>Student Infos</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span>Refresh list</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  @if (studentInfos?.length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span>No Student Infos found</span>
+    </div>
+  }
+
+  @if (studentInfos && studentInfos.length > 0) {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [sortState]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span>ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="firstName">
+              <div class="d-flex">
+                <span>First Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="lastName">
+              <div class="d-flex">
+                <span>Last Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="email">
+              <div class="d-flex">
+                <span>Email</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="isStudent">
+              <div class="d-flex">
+                <span>Is Student</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="status">
+              <div class="d-flex">
+                <span>Status</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (studentInfo of studentInfos; track trackId) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/student-info', studentInfo.id, 'view']">{{ studentInfo.id }}</a>
+              </td>
+              <td>{{ studentInfo.firstName }}</td>
+              <td>{{ studentInfo.lastName }}</td>
+              <td>{{ studentInfo.email }}</td>
+              <td>{{ studentInfo.isStudent }}</td>
+              <td>{{ { null: '', ACTIVE: 'ACTIVE', INACTIVE: 'INACTIVE', PENDING: 'PENDING' }[studentInfo.status ?? 'null'] }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/student-info', studentInfo.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline">View</span>
+                  </a>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

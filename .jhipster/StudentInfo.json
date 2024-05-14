@@ -1,0 +1,36 @@
+{
+  "annotations": {
+    "changelogDate": "20240514100415"
+  },
+  "dto": "no",
+  "fields": [
+    {
+      "fieldName": "firstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isStudent",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "ACTIVE,INACTIVE,PENDING"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "StudentInfo",
+  "pagination": "no",
+  "readOnly": true,
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
