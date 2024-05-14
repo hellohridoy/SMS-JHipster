@@ -39,6 +39,9 @@ public class StudentInfo implements Serializable {
     @Column(name = "status")
     private Status status;
 
+    @Column(name = "cgpa")
+    private Double cgpa;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
     public Long getId() {
@@ -119,6 +122,19 @@ public class StudentInfo implements Serializable {
         this.status = status;
     }
 
+    public Double getCgpa() {
+        return this.cgpa;
+    }
+
+    public StudentInfo cgpa(Double cgpa) {
+        this.setCgpa(cgpa);
+        return this;
+    }
+
+    public void setCgpa(Double cgpa) {
+        this.cgpa = cgpa;
+    }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -148,6 +164,7 @@ public class StudentInfo implements Serializable {
             ", email='" + getEmail() + "'" +
             ", isStudent='" + getIsStudent() + "'" +
             ", status='" + getStatus() + "'" +
+            ", cgpa=" + getCgpa() +
             "}";
     }
 }

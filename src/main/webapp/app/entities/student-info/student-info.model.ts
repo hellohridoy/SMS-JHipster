@@ -7,4 +7,5 @@ export interface IStudentInfo {
   email?: string | null;
   isStudent?: boolean | null;
   status?: keyof typeof Status | null;
+  cgpa?: number | null;
 }

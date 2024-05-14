@@ -1,24 +1,24 @@
 import { IStudentInfo } from './student-info.model';
 
 export const sampleWithRequiredData: IStudentInfo = {
-  id: 21486,
+  id: 29539,
 };
 
 export const sampleWithPartialData: IStudentInfo = {
-  id: 7537,
-  lastName: 'Gutmann',
-  email: 'Claudia_Wisozk16@yahoo.com',
-  isStudent: true,
-  status: 'INACTIVE',
+  id: 18167,
+  firstName: 'Cassandra',
+  email: 'Hipolito44@yahoo.com',
+  cgpa: 5259.47,
 };
 
 export const sampleWithFullData: IStudentInfo = {
-  id: 15098,
-  firstName: 'Zion',
-  lastName: 'Mills',
-  email: 'Carole24@yahoo.com',
+  id: 7193,
+  firstName: 'Mathilde',
+  lastName: 'Boehm',
+  email: 'Reyna99@gmail.com',
   isStudent: false,
-  status: 'INACTIVE',
+  status: 'ACTIVE',
+  cgpa: 20706.86,
 };
 Object.freeze(sampleWithRequiredData);
 Object.freeze(sampleWithPartialData);

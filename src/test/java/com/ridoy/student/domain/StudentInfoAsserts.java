@@ -51,7 +51,8 @@ public class StudentInfoAsserts {
             .satisfies(e -> assertThat(e.getLastName()).as("check lastName").isEqualTo(actual.getLastName()))
             .satisfies(e -> assertThat(e.getEmail()).as("check email").isEqualTo(actual.getEmail()))
             .satisfies(e -> assertThat(e.getIsStudent()).as("check isStudent").isEqualTo(actual.getIsStudent()))
-            .satisfies(e -> assertThat(e.getStatus()).as("check status").isEqualTo(actual.getStatus()));
+            .satisfies(e -> assertThat(e.getStatus()).as("check status").isEqualTo(actual.getStatus()))
+            .satisfies(e -> assertThat(e.getCgpa()).as("check cgpa").isEqualTo(actual.getCgpa()));
     }
 
     /**

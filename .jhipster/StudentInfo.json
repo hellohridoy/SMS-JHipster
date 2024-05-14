@@ -24,6 +24,10 @@
       "fieldName": "status",
       "fieldType": "Status",
       "fieldValues": "ACTIVE,INACTIVE,PENDING"
+    },
+    {
+      "fieldName": "cgpa",
+      "fieldType": "Double"
     }
   ],
   "jpaMetamodelFiltering": false,

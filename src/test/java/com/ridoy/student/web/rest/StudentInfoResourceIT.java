@@ -46,6 +46,9 @@ class StudentInfoResourceIT {
     private static final Status DEFAULT_STATUS = Status.ACTIVE;
     private static final Status UPDATED_STATUS = Status.INACTIVE;
 
+    private static final Double DEFAULT_CGPA = 1D;
+    private static final Double UPDATED_CGPA = 2D;
+
     private static final String ENTITY_API_URL = "/api/student-infos";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -78,7 +81,8 @@ class StudentInfoResourceIT {
             .lastName(DEFAULT_LAST_NAME)
             .email(DEFAULT_EMAIL)
             .isStudent(DEFAULT_IS_STUDENT)
-            .status(DEFAULT_STATUS);
+            .status(DEFAULT_STATUS)
+            .cgpa(DEFAULT_CGPA);
         return studentInfo;
     }
 
@@ -94,7 +98,8 @@ class StudentInfoResourceIT {
             .lastName(UPDATED_LAST_NAME)
             .email(UPDATED_EMAIL)
             .isStudent(UPDATED_IS_STUDENT)
-            .status(UPDATED_STATUS);
+            .status(UPDATED_STATUS)
+            .cgpa(UPDATED_CGPA);
         return studentInfo;
     }
 
@@ -119,7 +124,8 @@ class StudentInfoResourceIT {
             .andExpect(jsonPath("$.[*].lastName").value(hasItem(DEFAULT_LAST_NAME)))
             .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL)))
             .andExpect(jsonPath("$.[*].isStudent").value(hasItem(DEFAULT_IS_STUDENT.booleanValue())))
-            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())));
+            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
+            .andExpect(jsonPath("$.[*].cgpa").value(hasItem(DEFAULT_CGPA.doubleValue())));
     }
 
     @Test
@@ -138,7 +144,8 @@ class StudentInfoResourceIT {
             .andExpect(jsonPath("$.lastName").value(DEFAULT_LAST_NAME))
             .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL))
             .andExpect(jsonPath("$.isStudent").value(DEFAULT_IS_STUDENT.booleanValue()))
-            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()));
+            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()))
+            .andExpect(jsonPath("$.cgpa").value(DEFAULT_CGPA.doubleValue()));
     }
 
     @Test

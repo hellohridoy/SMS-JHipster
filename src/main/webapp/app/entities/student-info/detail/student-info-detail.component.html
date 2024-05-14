@@ -35,6 +35,10 @@
           <dd>
             <span>{{ { null: '', ACTIVE: 'ACTIVE', INACTIVE: 'INACTIVE', PENDING: 'PENDING' }[studentInfo()!.status ?? 'null'] }}</span>
           </dd>
+          <dt><span>Cgpa</span></dt>
+          <dd>
+            <span>{{ studentInfo()!.cgpa }}</span>
+          </dd>
         </dl>
 
         <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
