@@ -59,6 +59,9 @@ public class StudentInfoServiceImpl implements StudentInfoService {
                 if (studentInfo.getStatus() != null) {
                     existingStudentInfo.setStatus(studentInfo.getStatus());
                 }
+                if (studentInfo.getCgpa() != null) {
+                    existingStudentInfo.setCgpa(studentInfo.getCgpa());
+                }
 
                 return existingStudentInfo;
             })

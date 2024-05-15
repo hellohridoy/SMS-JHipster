@@ -17,7 +17,7 @@
     "enableHibernateCache": true,
     "enableSwaggerCodegen": false,
     "enableTranslation": false,
-    "entities": ["StudentInfo"],
+    "entities": ["StudentInfo", "Studentinfo"],
     "feignClient": null,
     "gradleEnterpriseHost": null,
     "jhipsterVersion": "8.4.0",
